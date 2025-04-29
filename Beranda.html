@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landing Page Modern</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background-image: url(foto/background.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        color: #fff;
+        line-height: 1.6;
+      }
+
+      header {
+        padding: 20px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.5);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .logo {
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: #00d9ff;
+      }
+
+      nav a {
+        color: #fff;
+        text-decoration: none;
+        margin-left: 20px;
+        transition: color 0.3s;
+      }
+
+      nav a:hover {
+        color: #00d9ff;
+      }
+
+      .hero {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0 20px;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 10px;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+        max-width: 600px;
+        margin-bottom: 30px;
+      }
+
+      .hero a {
+        padding: 12px 30px;
+        background-color: #00d9ff;
+        color: #000;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 25px;
+        transition: background-color 0.3s;
+      }
+
+      .hero a:hover {
+        background-color: #00b3cc;
+      }
+
+      .profile {
+        padding: 60px 40px;
+        background-color: rgba(0, 0, 0, 0.5);
+        text-align: center;
+      }
+
+      .profile h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+      }
+
+      .profile-content {
+        max-width: 700px;
+        margin: 0 auto;
+        background-color: #333;
+        padding: 30px;
+        border-radius: 15px;
+        text-align: left;
+      }
+
+      .profile-content p {
+        margin-bottom: 10px;
+      }
+
+      .gallery {
+        padding: 60px 40px;
+        background-color: rgba(0, 0, 0, 0.8);
+        text-align: center;
+      }
+
+      .gallery h2 {
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+      }
+
+      .gallery-grid img {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 15px;
+        transition: transform 0.3s ease;
+        margin: 10px;
+        cursor: pointer;
+      }
+
+      .gallery-grid img:hover {
+        transform: scale(1.05);
+      }
+
+      .lightbox {
+        display: none;
+        position: fixed;
+        z-index: 10000;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+      }
+
+      .lightbox:target {
+        display: flex;
+        opacity: 1;
+      }
+
+      .lightbox img {
+        max-width: 90%;
+        max-height: 80vh;
+        border-radius: 10px;
+        animation: fadein 0.5s ease-in-out;
+      }
+
+      .close-btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        color: #fff;
+        background: #ff3b3b;
+        padding: 10px 20px;
+        border-radius: 0%;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background 0.3s;
+      }
+
+      .close-btn:hover {
+        background: #e60000;
+      }
+
+      @keyframes fadein {
+        from {
+          opacity: 0;
+          transform: scale(0.95);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      .lightbox-nav {
+        margin-top: 20px;
+        display: flex;
+        gap: 20px;
+      }
+
+      .lightbox-nav a {
+        color: #fff;
+        text-decoration: none;
+        background: #00d9ff;
+        padding: 10px 20px;
+        border-radius: 8px;
+        transition: background 0.3s;
+      }
+
+      .lightbox-nav a:hover {
+        background: #00b3cc;
+      }
+
+      .cta {
+        padding: 60px 40px;
+        background-color: #003f5c;
+        text-align: center;
+      }
+
+      .cta h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+      }
+
+      .cta p {
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+      }
+
+      .cta a {
+        padding: 12px 30px;
+        background-color: #00d9ff;
+        color: #000;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 25px;
+        transition: background-color 0.3s;
+      }
+
+      .cta a:hover {
+        background-color: #00b3cc;
+      }
+
+      footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #111;
+      }
+
+      .back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #00d9ff;
+        color: #000;
+        padding: 10px 20px;
+        border-radius: 30px;
+        font-weight: bold;
+        text-decoration: none;
+        transition: background-color 0.3s;
+        z-index: 9999;
+      }
+
+      .back-to-top:hover {
+        background-color: #00b3cc;
+      }
+
+      .social-icons {
+        margin-top: 10px;
+      }
+
+      .social-icons a {
+        color: #fff;
+        margin: 0 10px;
+        font-size: 1.5rem;
+        transition: color 0.3s;
+      }
+
+      .social-icons a:hover {
+        color: #00d9ff;
+      }
+
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 2.2rem;
+        }
+
+        .hero p {
+          font-size: 1rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="logo">MyWebsite</div>
+      <nav>
+        <a href="#">Beranda</a>
+        <a href="Tentang.html">Tentang</a>
+        <a href="https://portofoliokran.my.canva.site/portofolio-rasyid-pdf"
+          >Portofolio</a
+        >
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h1>Selamat Datang di Website Kami</h1>
+      <p>"Tidak perlu kata-kata tetapi bukti nyata"</p>
+    </section>
+
+    <section class="profile-section">
+      <h2>Profil Saya</h2>
+      <h2 class="profile-title">Tentang Saya</h2>
+      <div
+        class="profile-box"
+        style="
+          text-align: center;
+          margin-bottom: 20px;
+          background-color: #111;
+          padding: 20px;
+          border-radius: 15px;
+        "
+      >
+        <img
+          src="foto/malio.jpg"
+          alt="Foto Profil"
+          style="
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #00d9ff;
+          "
+        />
+
+        <p><span class="label">Nama:</span> Muhammad Soelaiman Rasyid</p>
+        <p><span class="label">Alamat:</span> Bengkulu</p>
+        <p>
+          <span class="label">Email:</span> muhammadsoelaimanrasyid@gmail.com
+        </p>
+        <p><span class="label">Telepon:</span> 0822-7903-1772</p>
+        <p>
+          <span class="label">Deskripsi:</span> Lulusan Teknik Informatika dari
+          Universitas Muhammadiyah, memiliki ketertarikan dalam pengembangan web
+          & teknologi kreatif.
+        </p>
+      </div>
+    </section>
+
+    <section class="gallery">
+      <h2>Galeri Kami</h2>
+      <div class="gallery-grid">
+        <a href="#img1"><img src="foto/jaket.jpg" alt="Gambar 1" /></a>
+        <a href="#img2"><img src="foto/kebun teh.jpg" alt="Gambar 2" /></a>
+        <a href="#img3"><img src="foto/puncak.jpg" alt="Gambar 3" /></a>
+        <a href="#img4"><img src="foto/sky 1.jpg" alt="Gambar 4" /></a>
+      </div>
+    </section>
+
+    <div id="img1" class="lightbox">
+      <a href="#" class="close-btn">&times;</a>
+      <img src="foto/jaket.jpg" />
+      <div class="lightbox-nav">
+        <a href="#img4">&#8592; Sebelumnya</a>
+        <a href="#img2">Selanjutnya &#8594;</a>
+      </div>
+    </div>
+    <div id="img2" class="lightbox">
+      <a href="#" class="close-btn">&times;</a>
+      <img src="foto/kebun teh.jpg" />
+      <div class="lightbox-nav">
+        <a href="#img1">&#8592; Sebelumnya</a>
+        <a href="#img3">Selanjutnya &#8594;</a>
+      </div>
+    </div>
+    <div id="img3" class="lightbox">
+      <a href="#" class="close-btn">&times;</a>
+      <img src="foto/puncak.jpg" />
+      <div class="lightbox-nav">
+        <a href="#img2">&#8592; Sebelumnya</a>
+        <a href="#img4">Selanjutnya &#8594;</a>
+      </div>
+    </div>
+    <div id="img4" class="lightbox">
+      <a href="#" class="close-btn">&times;</a>
+      <img src="foto/sky 1.jpg" />
+      <div class="lightbox-nav">
+        <a href="#img3">&#8592; Sebelumnya</a>
+        <a href="#img1">Selanjutnya &#8594;</a>
+      </div>
+    </div>
+
+    <section class="cta">
+      <p>
+        Hubungi kami sekarang untuk konsultasi gratis dan mulailah transformasi
+        digital Anda bersama kami.
+      </p>
+      <a href="Hubungi Kami.html">Hubungi Kami</a>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Muhammad Soelaiman Rasyid. All rights reserved.</p>
+      <div class="social-media">
+        <a href="https://instagram.com/rasyiidd16" target="_blank">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
+            alt="Instagram"
+          />
+        </a>
+        <a
+          href="https://facebook.com/Muhammad Soelaiman Rasyid"
+          target="_blank"
+        >
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
+            alt="Facebook"
+          />
+        </a>
+        <a
+          href="https://linkedin.com/in/muhammad-soelaiman-rasyid"
+          target="_blank"
+        >
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/145/145807.png"
+            alt="LinkedIn"
+          />
+        </a>
+      </div>
+    </footer>
+  </body>
+</html>

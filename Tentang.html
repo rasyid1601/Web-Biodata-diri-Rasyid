@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tentang Saya</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)),
+          url("foto/background2.jpg") no-repeat center center/cover;
+        color: #fff;
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
+
+      header {
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 20px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        animation: slideDown 1s ease;
+      }
+
+      .logo {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #00d9ff;
+      }
+
+      nav a {
+        color: white;
+        margin-left: 20px;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      nav a:hover {
+        color: #00d9ff;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 60px auto;
+        background: rgba(0, 0, 0, 0.6);
+        padding: 40px;
+        border-radius: 15px;
+        text-align: center;
+        animation: fadeInUp 1s ease forwards;
+        opacity: 0;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        color: #00d9ff;
+        margin-bottom: 20px;
+      }
+
+      .foto-profil {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        border: 4px solid #00d9ff;
+        object-fit: cover;
+        margin-bottom: 20px;
+        animation: zoomIn 1s ease forwards;
+      }
+
+      p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 15px;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInText 1s ease forwards;
+        animation-delay: 1s;
+      }
+
+      footer {
+        text-align: center;
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.8);
+        margin-top: 60px;
+        animation: slideUp 1s ease;
+      }
+
+      /* Animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes slideDown {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes slideUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes zoomIn {
+        from {
+          opacity: 0;
+          transform: scale(0.8);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      @keyframes fadeInText {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 2rem;
+        }
+
+        .container {
+          margin: 30px 20px;
+          padding: 30px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="logo">MyWebsite</div>
+      <nav>
+        <a href="Beranda.html">Beranda</a>
+        <a href="Tentang.html">Tentang</a>
+        <a href="dokumen/Muhammad Soelaiman Rasyid Portofolio.pdf"
+          >Portofolio</a
+        >
+      </nav>
+    </header>
+
+    <div class="container">
+      <h1>Tentang Saya</h1>
+      <div class="foto-wrapper">
+        <img src="foto/malio.jpg" alt="Foto Profil" class="foto-profil" />
+      </div>
+      <p><strong>Nama:</strong> Muhammad Soelaiman Rasyid</p>
+      <p><strong>Alamat:</strong> Bengkulu</p>
+      <p><strong>Email:</strong> muhammadsoelaimanrasyid@gmail.com</p>
+      <p><strong>Telepon:</strong> 0822-7903-1772</p>
+        <strong>Deskripsi:</strong> Saya adalah seorang lulusan Teknik
+        Informatika dari Universitas Muhammadiyah. Saya memiliki minat yang
+        besar dalam pengembangan web dan teknologi digital, serta senang belajar
+        hal-hal baru.
+      </p>
+      <div class="download-cv">
+        <a href="dokumen/CV Rasyid bengkulu.pdf" download>
+          <i class="cv-icon">📄</i> Download CV
+        </a>
+      </div>
+      
+    </div>
+
+    <footer>&copy; 2025 Muhammad Soelaiman Rasyid. All rights reserved.</footer>
+  </body>
+</html>

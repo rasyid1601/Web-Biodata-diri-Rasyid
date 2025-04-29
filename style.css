@@ -1,0 +1,304 @@
+.social-media {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.social-media a {
+  margin: 0 10px;
+  display: inline-block;
+}
+
+.social-media img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease;
+}
+
+.social-media img:hover {
+  transform: scale(1.2);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  background-color: #333;
+  padding: 10px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  color: yellow;
+}
+
+.foto-profil {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 4px solid #00d9ff;
+  object-fit: cover;
+  margin-bottom: 20px;
+  animation: zoomIn 1s ease forwards, glowPulse 2s infinite alternate;
+  transition: transform 0.4s ease;
+}
+
+.foto-profil:hover {
+  transform: scale(1.1);
+}
+
+/* Animasi zoom saat pertama kali muncul */
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Animasi glow berdenyut */
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 0 5px #00d9ff, 0 0 10px #00d9ff;
+  }
+  100% {
+    box-shadow: 0 0 20px #00d9ff, 0 0 40px #00d9ff;
+  }
+}
+
+.profile-section {
+  padding: 60px 40px;
+  background: linear-gradient(to bottom, #111, #1f1f1f);
+  color: #fff;
+  text-align: center;
+}
+
+.profile-title {
+  font-size: 2.8rem;
+  margin-bottom: 30px;
+  color: #00d9ff;
+  animation: fadeInDown 1s ease-out;
+  text-shadow: 0 0 10px rgba(0, 217, 255, 0.4);
+}
+
+.profile-box {
+  max-width: 700px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  animation: fadeInUp 1.5s ease-out;
+  text-align: left;
+}
+
+.profile-box p {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  color: #ddd;
+  position: relative;
+  padding-left: 20px;
+}
+
+.label {
+  font-weight: 600;
+  color: #00d9ff;
+  position: relative;
+}
+
+.label::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: #00d9ff;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease-in-out;
+}
+
+p:hover .label::after {
+  transform: scaleX(1);
+}
+
+/* Keyframe Animasi */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.foto-wrapper {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  margin: 0 auto 30px;
+}
+
+.foto-wrapper::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: linear-gradient (45deg, #00d9ff);
+  animation: spin 10s linear infinite;
+  z-index: 0;
+  opacity: 0.4;
+}
+
+.foto-profil {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 5px solid #00d9ff;
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 0 15px rgba(0, 217, 255, 0.7);
+  animation: zoomIn 1s ease-out forwards, glowPulse 2.5s infinite alternate;
+  transition: transform 0.4s ease;
+}
+
+.foto-profil:hover {
+  transform: scale(1.1) rotate(2deg);
+}
+
+/* Keyframes */
+@keyframes zoomIn {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 0 10px #00d9ff, 0 0 20px #00d9ff;
+  }
+  100% {
+    box-shadow: 0 0 25px #00d9ff, 0 0 50px #00d9ff;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.download-cv {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.download-cv a {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #00d9ff;
+  color: #000;
+  font-weight: 600;
+  border-radius: 30px;
+  text-decoration: none;
+  box-shadow: 0 0 15px rgba(0, 217, 255, 0.5);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  animation: popUp 1s ease forwards;
+}
+
+.download-cv a:hover {
+  background-color: #00b3cc;
+  transform: scale(1.05);
+}
+
+/* Keyframe Animasi */
+@keyframes popUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.download-cv {
+  margin-top: 40px;
+  text-align: center;
+  animation: fadeSlideIn 1s ease forwards;
+}
+
+.download-cv a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  background: linear-gradient(145deg, #00d9ff, #00b3cc);
+  color: #000;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  border-radius: 40px;
+  text-decoration: none;
+  box-shadow: 0 8px 15px rgba(0, 217, 255, 0.4);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.download-cv a:hover {
+  background: #00eaff;
+  color: #000;
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 234, 255, 0.6);
+}
+
+.cv-icon {
+  font-size: 1.4rem;
+}
+
+/* Animasi Muncul */
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
