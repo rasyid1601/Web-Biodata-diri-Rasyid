@@ -184,35 +184,31 @@
         besar dalam pengembangan web dan teknologi digital, serta senang belajar
         hal-hal baru.
       </p>
-      <div class="download-cv-container">
-        <button class="btn-download" onclick="startDownload()">
-          <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none"
-            viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M4 4v16h16V4H4zm8 8v4m0 0l-2-2m2 2l2-2m4-6H8" />
-          </svg>
-          Download CV
-          <span class="glow"></span>
-        </button>
-      
-        <div class="progress-section" id="progressSection">
-          <div class="progress-bar">
-            <div class="progress-fill" id="progressFill"></div>
-          </div>
-          <p id="downloadStatus" class="download-status">Mengunduh<span class="dots">...</span></p>
-        </div>
-      </div>
-      
+<!-- Download CV Section -->
+<div class="download-cv-container">
+  <button class="btn-download" onclick="startDownload()">
+    <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+      viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M4 4v16h16V4H4zm8 8v4m0 0l-2-2m2 2l2-2m4-6H8" />
+    </svg>
+    Download CV
+    <span class="glow"></span>
+  </button>
+
+  <div class="progress-bar" id="progressBar">
+    <div class="progress-fill" id="progressFill"></div>
+  </div>
+</div>
+
       <script>
         function startDownload() {
-          const progressSection = document.getElementById("progressSection");
+          const bar = document.getElementById("progressBar");
           const fill = document.getElementById("progressFill");
-          const status = document.getElementById("downloadStatus");
-      
-          progressSection.style.display = "flex";
+          bar.style.display = "block";
           fill.style.width = "0%";
-          let percent = 0;
       
+          let percent = 0;
           const interval = setInterval(() => {
             percent += 5;
             fill.style.width = percent + "%";
@@ -220,13 +216,14 @@
             if (percent >= 100) {
               clearInterval(interval);
               setTimeout(() => {
-                window.location.href = "cv-soelaiman.pdf"; // ganti dengan nama file asli
-                progressSection.style.display = "none";
-              }, 500);
+                window.location.href = "cv-soelaiman.pdf"; // Ganti sesuai nama file CV
+                bar.style.display = "none";
+              }, 300);
             }
           }, 100);
         }
       </script>
+      
       
 
     <footer>&copy; 2025 Muhammad Soelaiman Rasyid. All rights reserved.</footer>
