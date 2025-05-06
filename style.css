@@ -273,21 +273,15 @@ p:hover .label::after {
   left: 150%;
 }
 
-.progress-section {
-  margin-top: 20px;
-  display: none;
-  flex-direction: column;
-  align-items: center;
-}
-
 .progress-bar {
   width: 70%;
   max-width: 400px;
   height: 12px;
   background: #ccc;
+  margin: 20px auto 0;
   border-radius: 10px;
   overflow: hidden;
-  margin-bottom: 10px;
+  display: none;
 }
 
 .progress-fill {
@@ -297,32 +291,8 @@ p:hover .label::after {
   transition: width 0.2s;
 }
 
-.download-status {
-  color: #fff;
-  font-weight: 500;
-  font-size: 1rem;
-  animation: fadeIn 0.5s ease;
-}
-
-.dots::after {
-  content: '';
-  animation: dotBlink 1.5s infinite steps(1);
-}
-
-@keyframes dotBlink {
-  0%   { content: ''; }
-  25%  { content: '.'; }
-  50%  { content: '..'; }
-  75%  { content: '...'; }
-  100% { content: ''; }
-}
-
+/* Animation */
 @keyframes fadeInUp {
   0% { opacity: 0; transform: translateY(30px); }
   100% { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
 }
