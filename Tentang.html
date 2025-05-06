@@ -184,13 +184,46 @@
         besar dalam pengembangan web dan teknologi digital, serta senang belajar
         hal-hal baru.
       </p>
-      <div class="download-cv">
-        <a href="dokumen/CV Rasyid Yogyakarta.pdf" download>
-          <i class="cv-icon">📄</i> Download CV
-        </a>
-      </div>
-      
-    </div>
+<!-- Download CV Section -->
+<div class="download-cv-container">
+  <button class="btn-download" onclick="startDownload()">
+    <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+      viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M4 4v16h16V4H4zm8 8v4m0 0l-2-2m2 2l2-2m4-6H8" />
+    </svg>
+    Download CV
+    <span class="glow"></span>
+  </button>
+
+  <div class="progress-bar" id="progressBar">
+    <div class="progress-fill" id="progressFill"></div>
+  </div>
+</div>
+
+<script>
+  function startDownload() {
+    const bar = document.getElementById("progressBar");
+    const fill = document.getElementById("progressFill");
+    bar.style.display = "block";
+    fill.style.width = "0%";
+
+    let percent = 0;
+    const interval = setInterval(() => {
+      percent += 5;
+      fill.style.width = percent + "%";
+
+      if (percent >= 100) {
+        clearInterval(interval);
+        setTimeout(() => {
+          window.location.href ="dokumen/CV Rasyid Yogyakarta.pdf"; // Ganti sesuai nama file CV
+          bar.style.display = "none";
+        }, 300);
+      }
+    }, 100);
+  }
+</script>
+
 
     <footer>&copy; 2025 Muhammad Soelaiman Rasyid. All rights reserved.</footer>
   </body>

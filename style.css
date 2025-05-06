@@ -217,88 +217,82 @@ p:hover .label::after {
   from {
     transform: rotate(0deg);
   }
-  to {
+  to { 
     transform: rotate(360deg);
   }
 }
-
-.download-cv {
-  margin-top: 30px;
-  text-align: center;
-}
-
-.download-cv a {
-  display: inline-block;
-  padding: 12px 25px;
-  background-color: #00d9ff;
-  color: #000;
-  font-weight: 600;
-  border-radius: 30px;
-  text-decoration: none;
-  box-shadow: 0 0 15px rgba(0, 217, 255, 0.5);
-  transition: transform 0.3s ease, background-color 0.3s ease;
-  animation: popUp 1s ease forwards;
-}
-
-.download-cv a:hover {
-  background-color: #00b3cc;
-  transform: scale(1.05);
-}
-
-/* Keyframe Animasi */
-@keyframes popUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px) scale(0.95);
+  .download-cv-container {
+    text-align: center;
+    margin-top: 40px;
+    animation: fadeInUp 1s ease;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
+  
+  .btn-download {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 36px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #fff;
+    background: #00c3ff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    overflow: hidden;
+    text-decoration: none;
+    box-shadow: 0 8px 20px rgba(0, 195, 255, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
-}
-.download-cv {
-  margin-top: 40px;
-  text-align: center;
-  animation: fadeSlideIn 1s ease forwards;
-}
-
-.download-cv a {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 14px 28px;
-  background: linear-gradient(145deg, #00d9ff, #00b3cc);
-  color: #000;
-  font-weight: bold;
-  font-size: 1rem;
-  border: none;
-  border-radius: 40px;
-  text-decoration: none;
-  box-shadow: 0 8px 15px rgba(0, 217, 255, 0.4);
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.download-cv a:hover {
-  background: #00eaff;
-  color: #000;
-  transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(0, 234, 255, 0.6);
-}
-
-.cv-icon {
-  font-size: 1.4rem;
-}
-
-/* Animasi Muncul */
-@keyframes fadeSlideIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
+  
+  .btn-download:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 195, 255, 0.6);
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  
+  .btn-download .icon {
+    width: 24px;
+    height: 24px;
+    stroke: #fff;
   }
-}
+  
+  .btn-download .glow {
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: skewX(-45deg);
+    transition: left 0.5s ease;
+  }
+  
+  .btn-download:hover .glow {
+    left: 150%;
+  }
+  
+  .progress-bar {
+    width: 70%;
+    max-width: 400px;
+    height: 12px;
+    background: #ccc;
+    margin: 20px auto 0;
+    border-radius: 10px;
+    overflow: hidden;
+    display: none;
+  }
+  
+  .progress-fill {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, #00d9ff, #00b3cc);
+    transition: width 0.2s;
+  }
+  
+  /* Animation */
+  @keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  
