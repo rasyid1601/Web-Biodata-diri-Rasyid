@@ -184,6 +184,8 @@
         besar dalam pengembangan web dan teknologi digital, serta senang belajar
         hal-hal baru.
       </p>
+      <p id="greeting-text">Halo, salam kenal!</p>
+
 <!-- Download CV Section -->
 <div class="download-cv-container">
   <button class="btn-download" onclick="startDownload()">
@@ -200,31 +202,8 @@
     <div class="progress-fill" id="progressFill"></div>
   </div>
 </div>
-
-      <script>
-        function startDownload() {
-          const bar = document.getElementById("progressBar");
-          const fill = document.getElementById("progressFill");
-          bar.style.display = "block";
-          fill.style.width = "0%";
-      
-          let percent = 0;
-          const interval = setInterval(() => {
-            percent += 5;
-            fill.style.width = percent + "%";
-      
-            if (percent >= 100) {
-              clearInterval(interval);
-              setTimeout(() => {
-                window.location.href = "dokumen/CV Rasyid Yogyakarta.pdf"; // Ganti sesuai nama file CV
-                bar.style.display = "none";
-              }, 300);
-            }
-          }, 100);
-        }
-      </script>
-      
-      
+    
+      <script src="script.js"></script>
 
     <footer>&copy; 2025 Muhammad Soelaiman Rasyid. All rights reserved.</footer>
   </body>
