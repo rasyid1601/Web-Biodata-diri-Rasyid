@@ -12,6 +12,32 @@ fotoProfil.addEventListener("click", () => {
   }, 600);
 });
 
+/* Modal untuk menampilkan gambar besar saat foto profil diklik*/
+  const modal = document.getElementById("modalFoto");
+  const modalImg = document.getElementById("imgModal");
+  const closeBtn = document.getElementById("closeModal");
+
+  fotoProfil.addEventListener('click', () => {
+    // Tampilkan teks
+    greeting.classList.add('show');
+
+    // Tampilkan modal dengan gambar besar
+    modal.style.display = "block";
+    modalImg.src = fotoProfil.src;
+  });
+
+  // Tutup modal saat klik tombol close
+  closeBtn.addEventListener('click', () => {
+    modal.style.display = "none";
+  });
+
+  // Tutup modal jika klik di luar gambar
+  window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+
 /* Donload cv rasyid yogyakarta */
 function startDownload() {
   const bar = document.getElementById("progressBar");
