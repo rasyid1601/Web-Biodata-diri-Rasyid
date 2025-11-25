@@ -38,7 +38,7 @@ fotoProfil.addEventListener("click", () => {
     }
   });
 
-/* Donload cv rasyid yogyakarta */
+/* Download cv rasyid  */
 function startDownload() {
   const bar = document.getElementById("progressBar");
   const fill = document.getElementById("progressFill");
@@ -53,7 +53,7 @@ function startDownload() {
     if (percent >= 100) {
       clearInterval(interval);
       setTimeout(() => {
-        window.location.href = "dokumen/CV Rasyid Yogyakarta.pdf"; // Ganti sesuai nama file CV
+        window.location.href = "dokumen/CV RASYID TERBARU/CV RASYID.pdf"; // Ganti sesuai nama file CV
         bar.style.display = "none";
       }, 300);
     }
